@@ -41,3 +41,29 @@ function selectionSort (arr) {
     return arr; 
 }
 
+// algorithm to merge two sorted arrays, this is a helper function for merge sort algorithm
+
+function mergeSortedArrays (l,r,a) {
+    var leftArraySize = l.length;
+    var rightArraySize = r.length;
+    var i=0;j=0;k=0;
+    
+    while(i<leftArraySize && j<rightArraySize){
+        if(l[i] < r[j]){
+            a[k] = l[i];k++; i++;
+        } else {
+            a[k] = r[j]; k++;j++;
+        }
+    }
+    
+    while(i<leftArraySize){
+        a[k] = l[i];k++; i++;
+    }
+
+    while(j<rightArraySize){
+        a[k] = r[j];k++; j++;
+    }
+    return a; 
+}
+
+mergeSortedArrays([1,2,4,6], [3,5,7,8], [])
