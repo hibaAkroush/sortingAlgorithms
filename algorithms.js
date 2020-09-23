@@ -66,4 +66,17 @@ function mergeSortedArrays (l,r,a) {
     return a; 
 }
 
-mergeSortedArrays([1,2,4,6], [3,5,7,8], [])
+// mergeSortedArrays([1,2,4,6], [3,5,7,8], [])
+
+// mergeSort([2,4,1,6,8,5,3,7])
+// [2,4,1,6,8,5,3,7] -> [2,4,1,6] -> [2,4] -> [2][4] 
+function mergeSort (array) {
+    if(array.length < 2) {return;} // stop condition for recursion 
+    var mid = array.length/2;
+    var left = array.slice(0,mid);
+    var right =  array.slice(mid,array.length);
+    mergeSort(left); // after this line left will be [2] (only first time its excuted)
+    mergeSort(right);// after this line right will be [4] (only first time its excuted)
+    mergeSortedArrays(left,right, array); 
+    return array;
+}
