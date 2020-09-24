@@ -1,4 +1,4 @@
-
+// all sorting algorithms written in javascript
 var arr = [7,2,4,1,5,3]
 
 //  assume index at 0 is a sorted array
