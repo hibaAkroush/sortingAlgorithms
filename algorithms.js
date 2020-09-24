@@ -80,3 +80,28 @@ function mergeSort (array) {
     mergeSortedArrays(left,right, array); 
     return array;
 }
+
+
+
+// Quick sort -> Pivot 
+// var arr = [7,2,1,6,8,5,3,4]; 
+// arragePivotPartition(arr, 0, arr.length-1) -> [2, 1, 3, 4, 8, 5, 7, 6]
+// helper function: return an array where all elements smaller than the last element are before the last element 
+// and all elemnts grater than the pivot are after 
+function arragePivotPartition (A, start, end){
+    var pivot = A[end];
+    var indexPartition = start;
+    for(var i=start; i<=end;i++){
+        if(A[i] < pivot){
+            console.log(A[i])
+            var temp = A[indexPartition];
+            A[indexPartition] = A[i];
+            A[i] = temp;
+            indexPartition++;
+        }
+    }
+    A[end] = A[indexPartition];
+    A[indexPartition] = pivot;
+    
+    return A;
+}
