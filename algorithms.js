@@ -105,3 +105,12 @@ function arragePivotPartition (A, start, end){
     
     return indexPartition;
 }
+function quickSort(arr, start, end) {
+    if(start < end) {
+        var partitionIndex = arragePivotPartition(arr, start, end);
+        console.log(partitionIndex)
+        quickSort(arr, start, partitionIndex-1)
+        quickSort(arr, partitionIndex+1, end)
+    }     
+    return arr;
+}
