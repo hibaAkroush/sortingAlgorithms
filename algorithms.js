@@ -114,3 +114,28 @@ function quickSort(arr, start, end) {
     }     
     return arr;
 }
+
+//  not a sorting algorithm 
+//  binary search 
+
+var arr = [1,2,4,5,6,9,12,16,17,18,20,30,33,35,36,39,44,47];
+
+var binarySearch = function(a, x, left, right) {
+    if (left > right) return false;
+    var mid = Math.ceil((left+right)/2)
+
+    if(a[mid] === x) {
+        console.log("mid: ", mid)
+        return mid;
+    }
+    
+    if(a[mid] > x){
+        binarySearch(a, x, left, mid - 1);
+    }
+
+    if(a[mid] < x){
+        binarySearch(a, x, mid + 1, right);
+    }
+};
+
+
